@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- RelativeLayout as the root layout to place elements relative to each other -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp"
+    android:paddingStart="24dp"
+    android:paddingEnd="24dp"
+    android:background="@color/background">
+
+    <!-- ImageView to display the current image with the 'centerCrop' scaleType to preserve the image's aspect ratio -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/buttonLayout"
+        android:layout_centerInParent="true"
+        android:scaleType="centerCrop"
+        android:transitionName="imageTransition" />
+
+    <!-- TextView to show the current image number and total number of images, centered horizontally below the ImageView -->
+    <TextView
+        android:id="@+id/imageNumberTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/black"
+        tools:text="1/23" />
+
+    <!-- LinearLayout for navigation buttons, placed at the bottom of the screen and centered horizontally -->
+    <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <!-- Button to navigate to the previous image -->
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:layout_margin="24dp"
+            android:backgroundTint="@color/buttonBackground"
+            android:textColor="@color/buttonText" />
+
+        <!-- Button to navigate to the next image -->
+        <Button
+            android:id="@+id/forwardButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forward"
+            android:layout_margin="24dp"
+            android:backgroundTint="@color/buttonBackground"
+            android:textColor="@color/buttonText" />
+
+    </LinearLayout>
+
+</RelativeLayout>
